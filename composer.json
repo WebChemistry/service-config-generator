@@ -1,0 +1,17 @@
+{
+    "name": "webchemistry/service-config-generator",
+    "require": {
+        "php": ">= 8.1",
+        "nette/finder": "^2.5",
+        "webchemistry/class-finder": "^1.0",
+        "symfony/yaml": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "WebChemistry\\ServiceConfigGenerator\\": "src"
+        }
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10"
+    }
+}
