@@ -14,8 +14,12 @@ final class SymfonyServiceGenerator implements ConfigGenerator
 	/** @var SymfonyServiceItem[] */
 	private array $items = [];
 
+	/**
+	 * @param mixed[] $defaults
+	 */
 	public function __construct(
 		private string $fileName,
+		private array $defaults = [],
 	)
 	{
 	}
@@ -33,7 +37,7 @@ final class SymfonyServiceGenerator implements ConfigGenerator
 
 	public function generate(string $targetDir): void
 	{
-		$services = [];
+		$services = $this->defaults;
 
 		foreach ($this->items as $item) {
 			$services[$item->className] = $item->buildConfig();
